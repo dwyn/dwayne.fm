@@ -7,6 +7,15 @@
 # General application configuration
 use Mix.Config
 
+config :dwayneFM, DwayneFM.Repo,
+  adapter: Ecto.Adapters.Postgres,
+  database: "dwayneFM_repo",
+  username: "postgres",
+  password: "postgres",
+  hostname: "localhost"
+
+config :dwayneFM, ecto_repos: [DwayneFM.Repo]
+
 config :dwayneFM,
   ecto_repos: [DwayneFM.Repo]
 
