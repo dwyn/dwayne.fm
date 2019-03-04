@@ -4,6 +4,7 @@
                              plug_cowboy,phoenix,phoenix_ecto]},
               {description,"dwayneFM"},
               {modules,['Elixir.DwayneFM','Elixir.DwayneFM.Application',
+                        'Elixir.DwayneFM.Auth','Elixir.DwayneFM.Auth.User',
                         'Elixir.DwayneFM.DataCase','Elixir.DwayneFM.Repo',
                         'Elixir.DwayneFMWeb','Elixir.DwayneFMWeb.ChannelCase',
                         'Elixir.DwayneFMWeb.ConnCase',
