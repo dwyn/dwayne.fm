@@ -9,9 +9,9 @@ use Mix.Config
 
 config :dwayneFM, DwayneFM.Repo,
   adapter: Ecto.Adapters.Postgres,
-  database: "dwayneFM_repo",
-  username: "postgres",
-  password: "postgres",
+  database: "dwaynefm",
+  username: "dwyn",
+  # password: "1618",
   hostname: "localhost"
 
 config :dwayneFM, ecto_repos: [DwayneFM.Repo]
@@ -21,6 +21,8 @@ config :dwayneFM,
 
 # Configures the endpoint
 config :dwayneFM, DwayneFMWeb.Endpoint,
+  # http: [port: {:system, "PORT"}],
+  http: [port: 4000],
   url: [host: "localhost"],
   secret_key_base: "rfRlPElv89Ui1VHwf1TcBFpFBIGOcSpLRgLZ+ReBELptF9rBS7h6193CHni4GmfE",
   render_errors: [view: DwayneFMWeb.ErrorView, accepts: ~w(json)],

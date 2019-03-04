@@ -49,7 +49,7 @@ config :phoenix, :plug_init_mode, :runtime
 
 # Configure your database
 config :dwayneFM, DwayneFM.Repo,
-  username: "postgres",
+  username: "dwyn",
   password: "postgres",
   database: "dwaynefm_dev",
   hostname: "localhost",
