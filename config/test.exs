@@ -11,8 +11,10 @@ config :logger, level: :warn
 
 # Configure your database
 config :dwayneFM, DwayneFM.Repo,
-  username: "postgres",
-  password: "postgres",
+  username: "dwyn",
+  # password: "postgres",
   database: "dwaynefm_test",
   hostname: "localhost",
   pool: Ecto.Adapters.SQL.Sandbox
+
+config :bcrypt_elixir, :log_rounds, 4
