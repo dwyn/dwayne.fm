@@ -40,8 +40,6 @@ defmodule DwayneFMWeb.Endpoint do
     key: "_dwayneFM_key",
     signing_salt: "32y2j0vv"
 
-  plug DwayneFMWeb.Router # Is this one necessary?
-
   plug Corsica,
     origins: "http://localhost:8080",
     log: [rejected: :error, invalid: :warn, accepted: :debug]

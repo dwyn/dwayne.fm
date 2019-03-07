@@ -11,6 +11,20 @@ defmodule DwayneFMWeb.UserController do
     render(conn, "index.json", users: users)
   end
 
+  def sign_in(conn, %{"email" => email, "password" => password}) do
+    case DwayneFM.Auth.authenticate_user(email, password) do
+      {:ok, user} ->
+        conn
+        |> put_status(:ok)
+        |> render(DwayneFMWeb.UserView, "sign_in.json", user: user)
+
+      {:error, message} ->
+        conn
+        |> put_status(:unauthorized)
+        |> render(DwayneFMWeb.ErrorView, "401.json", message: message)
+    end
+  end
+
   def create(conn, %{"user" => user_params}) do
     with {:ok, %User{} = user} <- Auth.create_user(user_params) do
       conn
