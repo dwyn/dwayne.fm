@@ -12,16 +12,18 @@ defmodule DwayneFMWeb.UserController do
   end
 
   def sign_in(conn, %{"email" => email, "password" => password}) do
-    case DwayneFM.Auth.authenticate_user(email, password) do
+    case MyApp.Auth.authenticate_user(email, password) do
       {:ok, user} ->
         conn
+        |> put_session(:current_user_id, user.id)
         |> put_status(:ok)
-        |> render(DwayneFMWeb.UserView, "sign_in.json", user: user)
+        |> render(MyAppWeb.UserView, "sign_in.json", user: user)
 
       {:error, message} ->
         conn
+        |> delete_session(:current_user_id)
         |> put_status(:unauthorized)
-        |> render(DwayneFMWeb.ErrorView, "401.json", message: message)
+        |> render(MyAppWeb.ErrorView, "401.json", message: message)
     end
   end
 
