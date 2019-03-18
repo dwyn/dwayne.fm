@@ -1,3 +1,4 @@
 Next up:
 
-Sessions!
+<!-- 1. Sessions! -->
+2. Updating tests!
