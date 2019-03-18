@@ -53,6 +53,28 @@ defmodule DwayneFMWeb.UserControllerTest do
     end
   end
 
+  describe "sign_in user" do
+    test "renders user when user credentials are good", %{conn: conn, current_user: current_user} do
+      conn =
+        post(
+          conn,
+          Routes.user_path(conn, :sign_in, %{
+            email: current_user.email,
+            password: @current_user_attrs.password
+          })
+        )
+
+      assert json_response(conn, 200)["data"] == %{
+               "user" => %{"id" => current_user.id, "email" => current_user.email}
+             }
+    end
+
+    test "renders errors when user credentials are bad", %{conn: conn} do
+      conn = post(conn, Routes.user_path(conn, :sign_in, %{email: "nonexistent email", password: ""}))
+      assert json_response(conn, 401)["errors"] == %{"detail" => "Wrong email or password"}
+    end
+  end
+
   describe "create user" do
     test "renders user when data is valid", %{conn: conn} do
       conn = post(conn, Routes.user_path(conn, :create), user: @create_attrs)
