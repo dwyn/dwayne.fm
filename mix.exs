@@ -33,7 +33,8 @@ defmodule DwayneFM.MixProject do
   # Type `mix help deps` for examples and options.
   defp deps do
     [
-      {:ja_serializer, "~> x.x.x"},
+      {:credo, "~> 1.0.0", only: [:dev, :test], runtime: false},
+      {:ja_serializer, "~> 0.14.0"},
       {:corsica, "~> 1.0"},
       {:bcrypt_elixir, "~> 1.0"},
       {:phoenix, "~> 1.4.1"},

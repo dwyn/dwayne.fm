@@ -3,6 +3,7 @@ defmodule DwayneFMWeb.Router do
 
   pipeline :api do
     plug :accepts, ["json"]
+    plug :accepts, ["json-api"]
     plug :fetch_session
   end
 

@@ -12,7 +12,7 @@ defmodule DwayneFMWeb.UserController do
   end
 
   def sign_in(conn, %{"email" => email, "password" => password}) do
-    case MyApp.Auth.authenticate_user(email, password) do
+    case DwayneFM.Auth.authenticate_user(email, password) do
       {:ok, user} ->
         conn
         |> put_session(:current_user_id, user.id)
