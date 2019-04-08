@@ -5,6 +5,7 @@ defmodule DwayneFMWeb.UserControllerTest do
   alias DwayneFM.Auth.User
   alias Plug.Test
 
+  @moduledoc %{ message: "Not sure whats happening here? T.B.D."}
   @create_attrs %{
     email: "some email",
     is_active: true,
