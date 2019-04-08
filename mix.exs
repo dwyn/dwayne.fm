@@ -1,4 +1,4 @@
-defmodule DwayneFM.MixProject do
+defmodule DwayneFM.Mixfile do
   use Mix.Project
 
   def project do
@@ -33,19 +33,16 @@ defmodule DwayneFM.MixProject do
   # Type `mix help deps` for examples and options.
   defp deps do
     [
-      {:httpoison, "~> 1.4"},
-      {:credo, "~> 1.0.0", only: [:dev, :test], runtime: false},
-      {:ja_serializer, "~> 0.14.0"},
-      {:corsica, "~> 1.0"},
-      {:bcrypt_elixir, "~> 1.0"},
       {:phoenix, "~> 1.4.1"},
       {:phoenix_pubsub, "~> 1.1"},
       {:phoenix_ecto, "~> 4.0"},
       {:ecto_sql, "~> 3.0"},
-      {:postgrex, ">= 0.0.0"},
+      {:postgrex, ">= 0.14.1"},
       {:gettext, "~> 0.11"},
       {:jason, "~> 1.0"},
-      {:plug_cowboy, "~> 2.0"}
+      {:plug_cowboy, "~> 2.0"},
+      {:corsica, "~> 1.0"},
+      {:bcrypt_elixir, "~> 1.0"},
     ]
   end
 
