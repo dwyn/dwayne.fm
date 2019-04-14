@@ -1,6 +1,7 @@
 defmodule DwayneFM.Mixfile do
   use Mix.Project
 
+
   def project do
     [
       app: :dwayneFM,
@@ -10,7 +11,10 @@ defmodule DwayneFM.Mixfile do
       compilers: [:phoenix, :gettext] ++ Mix.compilers(),
       start_permanent: Mix.env() == :prod,
       aliases: aliases(),
-      deps: deps()
+      deps: deps(),
+      name: "dwayne.fm",
+      docs: [main: "dwayne.fm",
+            extras: ["README.md"]]
     ]
   end
 
@@ -43,6 +47,7 @@ defmodule DwayneFM.Mixfile do
       {:plug_cowboy, "~> 2.0"},
       {:corsica, "~> 1.0"},
       {:bcrypt_elixir, "~> 1.0"},
+      {:ex_doc, "~> 0.19", only: :dev, runtime: false},
     ]
   end
 
