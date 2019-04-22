@@ -24,7 +24,7 @@ defmodule DwayneFM.Mixfile do
   def application do
     [
       mod: {DwayneFM.Application, []},
-      extra_applications: [:logger, :runtime_tools]
+      extra_applications: [:logger, :runtime_tools, :deliveries]
     ]
   end
 
@@ -38,6 +38,7 @@ defmodule DwayneFM.Mixfile do
   defp deps do
     [
       {:phoenix, "~> 1.4.1"},
+      {:deliveries, in_umbrella: true},
       {:phoenix_pubsub, "~> 1.1"},
       {:phoenix_ecto, "~> 4.0"},
       {:ecto_sql, "~> 3.0"},
