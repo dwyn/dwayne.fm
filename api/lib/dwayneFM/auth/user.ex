@@ -2,7 +2,7 @@ defmodule DwayneFM.Auth.User do
   use Ecto.Schema
   import Ecto.Changeset
 
-
+  # recreate for posts table
   schema "users" do
     field :email, :string
     field :is_active, :boolean, default: false
